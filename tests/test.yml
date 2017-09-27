@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: true
+  become_user: root
+
+  roles:
+  - andrelohmann.nodesource
+  - ansible-role-localtunnel
+...

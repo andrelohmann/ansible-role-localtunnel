@@ -1,0 +1,6 @@
+[program:]
+command=lt --port {{ localtunnel_port }}{% if localtunnel_subdomain %} --subdomain {{ localtunnel_subdomain }}{% endif %}{% if localtunnel_local-host %} --local-host {{ localtunnel_local-host }}{% endif %}{% if localtunnel_host %} --host {{ localtunnel_host }}{% endif %}
+autostart=true
+autorestart=true
+stdout_logfile=/var/log/localtunnel.log
+stderr_logfile=/var/log/localtunnel.err.log

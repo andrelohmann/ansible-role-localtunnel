@@ -1,0 +1,31 @@
+---
+
+- name: APT | Update cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  changed_when: false
+
+- name: APT | Install localtunnel dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - supervisor
+
+- name: install localtunnel
+  npm:
+    name: localtunnel
+    global: yes
+
+- name: add localtunnel supervisor config
+  template:
+    src: localtunnel.conf.j2
+    dest: /etc/supervisor/conf.d/localtunnel.conf
+
+- name: restart supervisor
+  service:
+    name: supervisor
+    state: restarted
+
+...
