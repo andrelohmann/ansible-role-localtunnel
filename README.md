@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: localtunnel
       roles:
-         - { role: andrelohmann.ansible-role-localtunnel }
+         - { role: andrelohmann.localtunnel }
 
 License
 -------
