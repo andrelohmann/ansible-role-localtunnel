@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: localtunnel
       roles:
-         - { role: andrelohmann.localtunnel }
+         - andrelohmann.localtunnel
 
 License
 -------

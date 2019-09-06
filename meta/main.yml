@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: localtunnel
   author: andrelohmann
   description: ansible galaxy role to install localtunne.me client
   company: smartformer UG
