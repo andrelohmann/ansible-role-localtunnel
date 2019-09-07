@@ -20,12 +20,23 @@
 
 - name: add localtunnel supervisor config
   template:
-    src: localtunnel.conf.j2
-    dest: /etc/supervisor/conf.d/localtunnel.conf
+    src: localtunnel.service.j2
+    dest: /etc/systemd/system/localtunnel.service
+    mode: 0644
 
-- name: restart supervisor
-  service:
-    name: supervisor
-    state: restarted
+- name: reload systemd
+  systemd:
+    daemon_reload: yes
+
+- name: enable localtunnel
+  systemd:
+    name: localtunnel
+    enabled: yes
+
+- name: start localtunnel
+  systemd:
+    name: localtunnel
+    state: started
+
 
 ...
