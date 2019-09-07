@@ -18,7 +18,7 @@
     name: localtunnel
     global: yes
 
-- name: add localtunnel supervisor config
+- name: add localtunnel unit file
   template:
     src: localtunnel.service.j2
     dest: /etc/systemd/system/localtunnel.service

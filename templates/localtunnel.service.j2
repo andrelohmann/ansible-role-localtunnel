@@ -3,7 +3,7 @@ Description=localtunnel allows to tunnel your application to a public domain
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/lt --port {{ localtunnel_port }}{% if localtunnel_subdomain %} --subdomain {{ localtunnel_subdomain }}{% endif %}{% if localtunnel_local_host %} --local-host {{ localtunnel_local_host }}{% endif %}{% if localtunnel_host %} --host {{ localtunnel_host }}{% endif %}
+ExecStart=/usr/bin/lt --port {{ localtunnel_port }}{% if localtunnel_subdomain %} --subdomain {{ localtunnel_subdomain }}{% endif %}{% if localtunnel_local_host %} --local-host {{ localtunnel_local_host }}{% endif %}{% if localtunnel_host %} --host {{ localtunnel_host }}{% endif %} 
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
